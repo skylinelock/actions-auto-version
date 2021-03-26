@@ -4,6 +4,8 @@ echo "Running release.sh"
 
 pre_version=`git tag -l | tail -n 1 | awk '{print $1}'`
 
+echo "Pre version $pre_version"
+
 prefix=`echo $PR_TITLE | awk '{print $1}'`
 
 command=`$(echo "$prefix" |  tr '[:upper:]' '[:lower:]' )`
@@ -12,7 +14,7 @@ version="v1.0.0"
 
 if [ -z "$pre_version" ]; then
     echo "::set-output name=version::$version"
-    echo "Applied 1.0.0"
+    echo "New tag v1.0.0"
     exit 0
 fi
 
@@ -36,3 +38,4 @@ esac
 
 version="v$major.$minor.$fix"
 echo "::set-output name=version::$version"
+echo "New tag $version"
