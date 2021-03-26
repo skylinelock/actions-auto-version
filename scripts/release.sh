@@ -22,6 +22,10 @@ fix=`echo $pre_version | awk -F '.' '{print $3}'`
 minor=`echo $pre_version | awk -F '.' '{print $2}'`
 major=`echo $pre_version | awk -F '.' '{print $1}'`
 
+echo $PR_TITLE
+echo $prefix
+echo $command
+
 case "$command" in
     "fix" ) fix=`expr $fix + 1` ;;
     "minor" ) 
