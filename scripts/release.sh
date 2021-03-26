@@ -11,7 +11,7 @@ command=`$(echo "$prefix" |  tr '[:upper:]' '[:lower:]' )`
 if [ -z "$pre_version" ]; then
     echo "::set-output name=version::$version"
     echo "Applied 1.0.0"
-    exit 1
+    exit 0
 fi
 
 fix=`echo $pre_version | awk -F '.' '{print $3}'`
