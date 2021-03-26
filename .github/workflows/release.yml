@@ -21,7 +21,6 @@ jobs:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
           echo $(pwd)
-          chmod u+x scripts/count_version.sh
           sh scripts/release.sh
 
     # - name: create release
