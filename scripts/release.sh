@@ -9,8 +9,7 @@ prefix=`echo $PR_TITLE | awk '{print $1}'`
 command=`$(echo "$prefix" |  tr '[:upper:]' '[:lower:]' )`
 
 if [ -z "$pre_version" ]; then
-    git tag -a "v1.0.0"
-    git push origin "v1.0.0"
+    echo "::set-output name=version::$version"
     echo "Applied 1.0.0"
     exit 1
 fi
@@ -34,5 +33,4 @@ case "$command" in
 esac
 
 version="v$major.$minor.$fix"
-git tag -a $version
-git push origin $version
+echo "::set-output name=version::$version"
