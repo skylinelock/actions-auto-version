@@ -3,9 +3,8 @@
 echo "Running release.sh"
 
 git fetch --prune --unshallow --tags
-pre_version=`git tag -l | tail -n 1 | awk '{print $1}'`
-
-echo $(git tag -l)
+pre_tag=`git tag -l | tail -n 1 | awk '{print $1}'`
+pre_version=${pre_tag#"v"}
 
 prefix=`echo $PR_TITLE | awk '{print $1}'`
 
@@ -13,7 +12,7 @@ command=`$(echo "$prefix" |  tr '[:upper:]' '[:lower:]' )`
 
 version="v1.0.0"
 
-if [ -z "$pre_version" ]; then
+if [ -z "$pre_tag" ]; then
     echo "::set-output name=version::$version"
     echo "New tag v1.0.0"
     exit 0
