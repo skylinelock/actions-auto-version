@@ -1,13 +1,12 @@
 #!/bin/bash
 
 echo "Running release.sh"
-echo "$BASH_VERSION"
 
 pre_version=`git tag -l | tail -n 1 | awk '{print $1}'`
 
 prefix=`echo $PR_TITLE | awk '{print $1}'`
 
-command=${prefix,,}
+command="${prefix,,}"
 
 if [ -z "$pre_version" ]; then
     echo "1.0.0" 
