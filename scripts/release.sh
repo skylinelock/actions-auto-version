@@ -4,7 +4,7 @@ echo "Running release.sh"
 
 pre_version=`git tag -l | tail -n 1 | awk '{print $1}'`
 
-echo "Pre version $pre_version"
+echo "$pre_version"
 
 prefix=`echo $PR_TITLE | awk '{print $1}'`
 
