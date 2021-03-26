@@ -8,6 +8,8 @@ prefix=`echo $PR_TITLE | awk '{print $1}'`
 
 command=`$(echo "$prefix" |  tr '[:upper:]' '[:lower:]' )`
 
+version="v1.0.0"
+
 if [ -z "$pre_version" ]; then
     echo "::set-output name=version::$version"
     echo "Applied 1.0.0"
