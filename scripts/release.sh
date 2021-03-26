@@ -8,7 +8,7 @@ pre_version=${pre_tag#"v"}
 
 prefix=`echo $PR_TITLE | awk '{print $1}'`
 
-command=`$(echo "$prefix" |  tr '[:upper:]' '[:lower:]' )`
+command=`$(echo "$prefix" | awk '{print tolower($0)}')`
 
 version="v1.0.0"
 
