@@ -2,9 +2,9 @@
 
 echo "Running release.sh"
 
-echo "${GITHUB_REF#refs/tags/}"
+echo $1
 
-pre_version="${GITHUB_REF#refs/tags/}"
+pre_version=$1
 
 echo "$pre_version"
 
