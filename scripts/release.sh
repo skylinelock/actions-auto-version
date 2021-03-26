@@ -6,7 +6,7 @@ pre_version=`git tag -l | tail -n 1 | awk '{print $1}'`
 
 prefix=`echo $PR_TITLE | awk '{print $1}'`
 
-command="${prefix,,}"
+command=`$(echo "$prefix" |  tr '[:upper:]' '[:lower:]' )`
 
 if [ -z "$pre_version" ]; then
     echo "1.0.0" 
