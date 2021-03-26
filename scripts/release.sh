@@ -2,7 +2,7 @@
 
 echo "Running release.sh"
 
-pre_version="git tag -l | tail -n 1 | awk '{print $1}'"
+pre_version=`git tag -l | tail -n 1 | awk '{print $1}'`
 
 git tag -l
 
