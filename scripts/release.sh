@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Running release.sh"
-echo $BASH_VERSION
+echo "$BASH_VERSION"
 
 pre_version=`git tag -l | tail -n 1 | awk '{print $1}'`
 
